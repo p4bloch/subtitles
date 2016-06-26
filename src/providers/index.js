@@ -7,7 +7,5 @@ const providers = [
 export const all = providers
 
 export const findByName = (name) => {
-    return providers.filter((provider) => {
-        if (provider.name == name) return provider
-    })[0]
+    return providers.find(provider => provider.name == name)
 }

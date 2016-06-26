@@ -3,13 +3,13 @@ import request from 'request'
 import fs from 'fs'
 
 export default class Subtitle {
-  constructor(options) {
-    this.language = options.language
-    this.version = options.version
-    this.info = options.info
-    this.status = options.status
-    this.downloadLink = options.downloadLink
-    this.referer = getEpisodeUrl(options.showInfo.TvShow, options.showInfo.season, options.showInfo.episode)
+  constructor({language, version, info, status, downloadLink, showInfo}) {
+    this.language = language
+    this.version = version
+    this.info = info
+    this.status = status
+    this.downloadLink = downloadLink
+    this.referer = getEpisodeUrl(showInfo.TvShow, showInfo.season, showInfo.episode)
   }
 
   download(path) {

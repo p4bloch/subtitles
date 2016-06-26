@@ -1,6 +1,6 @@
 import * as providers from './providers'
 
-var search = function(type, options, cb) {
+export function search(type, options, cb) {
   switch (type) {
     case 'movie':
       return searchMovie(options, cb)
