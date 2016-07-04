@@ -1,6 +1,6 @@
 {
   "name": "subtitles",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Search for subtitles in different providers",
   "main": "./lib/index.js",
   "scripts": {
