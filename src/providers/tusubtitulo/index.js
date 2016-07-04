@@ -7,7 +7,6 @@ const find = (options, cb) => {
   .then((tvShow) => findSubtitlesForEpisode(tvShow, season, episode))
   .then((subtitles) => {
     const subs = findSubtitlesForLanguage(language, subtitles)
-    console.log('subs', subs);
     cb(subs)
   })
 }

@@ -6,8 +6,6 @@ export function search(type, options, cb) {
       return searchMovie(options, cb)
     case 'episode':
       return searchEpisode(options, cb)
-    default:
-      return searchMovie(options, cb)
   }
 }
 
@@ -20,13 +18,3 @@ const searchEpisode = function(options, cb) {
   var Provider = providers.findByName(provider)
   Provider.find(options, cb)
 }
-
-// search('episode', {
-//   provider: 'tusubtitulo',
-//   tvShow: 'new girl',
-//   season: 5,
-//   episode: 6,
-//   language: 'es_es'
-// }, function(subtitles) {
-//   subtitles[0].download('newgirl.srt')
-// })
