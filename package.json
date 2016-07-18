@@ -2,7 +2,7 @@
   "name": "subtitles",
   "version": "0.0.4",
   "description": "Search for subtitles in different providers",
-  "main": "./lib/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "start": "babel -w -s -d lib/ src/",
     "compile": "babel -d lib/ src/",
