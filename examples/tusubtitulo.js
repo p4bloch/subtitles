@@ -6,4 +6,6 @@ subtitles.search('episode', {
   season: '9',
   episode: '01',
   language: 'es_la'
-}).then(subtitles => subtitles[0].download('tbbt.9x01.srt'))
+}).then(function(subtitles) {
+  subtitles[0].download('tbbt.9x01.srt')
+})
