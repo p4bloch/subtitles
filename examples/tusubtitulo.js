@@ -1,4 +1,4 @@
-var subtitles = require('..')
+var subtitles = require('../lib')
 
 subtitles.search('episode', {
   provider: 'tusubtitulo',
@@ -6,6 +6,4 @@ subtitles.search('episode', {
   season: '9',
   episode: '01',
   language: 'es_la'
-}, function(subtitles) {
-  subtitles[0].download('tbbt.9x01.srt')
-})
+}).then(subtitles => subtitles[0].download('tbbt.9x01.srt'))

@@ -1,20 +1,20 @@
 import * as providers from './providers'
 
-export function search(type, options, cb) {
+export function search(type, options) {
   switch (type) {
     case 'movie':
-      return searchMovie(options, cb)
+      return searchMovie(options)
     case 'episode':
-      return searchEpisode(options, cb)
+      return searchEpisode(options)
   }
 }
 
-const searchMovie = function(options, cb) {
+const searchMovie = function(options) {
   return 'searching a Movie'
 }
 
-const searchEpisode = function(options, cb) {
+const searchEpisode = function(options) {
   const { provider } = options
   var Provider = providers.findByName(provider)
-  Provider.find(options, cb)
+  return Provider.find(options)
 }

@@ -1,13 +1,12 @@
 import { findTvShowByName } from './helpers'
 import { indexCache, findSubtitlesForEpisode, findSubtitlesForLanguage } from './data'
 
-const find = (options, cb) => {
-  const { showName, season, episode, language } = options
-  findTvShowByName(showName)
-  .then((tvShow) => findSubtitlesForEpisode(tvShow, season, episode))
-  .then((subtitles) => {
-    const subs = findSubtitlesForLanguage(language, subtitles)
-    cb(subs)
+const find = (options) => {
+  return new Promise((resolve, reject) => {
+    const { showName, season, episode, language } = options
+    findTvShowByName(showName)
+    .then((tvShow) => findSubtitlesForEpisode(tvShow, season, episode))
+    .then((subtitles) => resolve(findSubtitlesForLanguage(language, subtitles)))
   })
 }
 
